@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Firebase Merge Panel</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="bg"></div>
+  <main class="container">
+    <section class="hero">
+      <div class="badge">FIREBASE DATA PANEL</div>
+      <h1>Merge <span>Panel</span></h1>
+      <p>Load a shared configuration from the <code>?s=</code> URL parameter and view data from the Firebase Realtime Database endpoints you provide.</p>
+    </section>
+
+    <section class="card">
+      <div class="card-head">
+        <div>
+          <h2>Configuration</h2>
+          <p>Use JSON or create a configuration below.</p>
+        </div>
+        <button id="clearBtn" class="ghost">Clear</button>
+      </div>
+
+      <label for="configInput">Encoded / JSON configuration</label>
+      <textarea id="configInput" rows="8" placeholder='MERGED:::[{"url":"https://your-project-default-rtdb.firebaseio.com","key":"A"}]'></textarea>
+
+      <div class="actions">
+        <button id="loadBtn" class="primary">Load Data</button>
+        <button id="encodeBtn" class="secondary">Create Share Link</button>
+      </div>
+
+      <div id="shareBox" class="share hidden">
+        <input id="shareLink" readonly>
+        <button id="copyBtn">Copy</button>
+      </div>
+      <div id="status" class="status"></div>
+    </section>
+
+    <section id="results" class="results"></section>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>
